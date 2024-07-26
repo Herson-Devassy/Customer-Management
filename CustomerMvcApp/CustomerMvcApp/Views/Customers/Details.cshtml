@@ -1,0 +1,76 @@
+﻿@model CustomerMvcApp.Models.Customer
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 50%;
+            margin: 20px auto;
+        }
+
+        .details {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+            .details dl {
+                margin: 0;
+            }
+
+            .details dt {
+                font-weight: bold;
+            }
+
+            .details dd {
+                margin: 0 0 10px 0;
+            }
+
+        .button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+            .button:hover {
+                background-color: #0056b3;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Customer Details</h1>
+        <div class="details">
+            <dl>
+                <dt>ID:</dt>
+                <dd>@Model.Id</dd>
+                <dt>First Name:</dt>
+                <dd>@Model.FirstName</dd>
+                <dt>Last Name:</dt>
+                <dd>@Model.LastName</dd>
+                <dt>Email:</dt>
+                <dd>@Model.Email</dd>
+                <dt>Phone Number:</dt>
+                <dd>@Model.PhoneNumber</dd>
+                <dt>Address:</dt>
+                <dd>@Model.Address</dd>
+                <dt>Gender:</dt>
+                <dd>@Model.Gender</dd>
+            </dl>
+            <a href="@Url.Action("Edit", new { id = Model.Id })" class="button">Edit</a>
+            <a href="@Url.Action("Delete", new { id = Model.Id })" class="button">Delete</a>
+            <a href="@Url.Action("Index")" class="button">Back to List</a>
+        </div>
+    </div>
+</body>
+</html>
